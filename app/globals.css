@@ -24,3 +24,34 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.perspective {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.fly {
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-name: fly;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fly {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-90vw);
+    opacity: 0;
+  }
+}

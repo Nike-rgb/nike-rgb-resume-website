@@ -159,7 +159,7 @@ const ChatBot: React.FC = () => {
             <button
               key={i}
               onClick={() => handleExampleClick(q)}
-              className="text-left text-sm md:text-base px-4 py-2 rounded-md border border-gray-200 hover:bg-indigo-50 hover:border-indigo-300 transition-all">
+              className="text-left text-sm md:text-base px-4 py-2 rounded-md border border-gray-100 hover:bg-indigo-50 hover:border-indigo-300 transition-all">
               {q}
             </button>
           ))}

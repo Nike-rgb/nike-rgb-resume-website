@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   title: "Nikesh Kazi Lepcha",
   description: "Resume of Nikesh Kazi Lepcha",
   icons: {
-    icon: "/person.ico",
-    shortcut: "/person.ico",
-    apple: "/person.ico",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 };
 

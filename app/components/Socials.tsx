@@ -7,7 +7,7 @@ import { SiMedium } from "react-icons/si";
 export default function Socials() {
   return (
     <>
-      <div className="my-10 md:my-40 md:px-24">
+      <div className="my-10 md:my-24 md:px-24">
         <h2 className="md:text-center text-2xl md:text-4xl font-semibold text-[#212529] mb-8 md:mb-16">
           I code daily!
         </h2>

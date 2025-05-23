@@ -20,9 +20,7 @@ const categorizedTechStack = {
     },
     {
       name: "Next.js",
-      icon: (
-        <SiNextdotjs className="icon md:size-6 text-black dark:text-white" />
-      ),
+      icon: <SiNextdotjs className="icon md:size-6 text-black " />,
     },
     {
       name: "TypeScript",
@@ -44,9 +42,7 @@ const categorizedTechStack = {
     },
     {
       name: "Express.js",
-      icon: (
-        <SiExpress className="icon text-gray-800 md:size-6 dark:text-gray-200" />
-      ),
+      icon: <SiExpress className="icon text-gray-800 md:size-6 " />,
     },
     {
       name: "MongoDB",
@@ -80,9 +76,9 @@ export default function TechStack() {
               {techs.map((tech) => (
                 <div
                   key={tech.name}
-                  className="w-20 h-20 md:size-24 bg-white dark:bg-gray-900 shadow rounded-lg flex flex-col items-center justify-center text-center">
+                  className="w-20 h-20 md:size-24 bg-white shadow rounded-lg flex flex-col items-center justify-center text-center">
                   {tech.icon}
-                  <p className="mt-1 text-xs font-medium text-gray-700 dark:text-gray-300">
+                  <p className="mt-1 text-xs font-medium text-gray-700">
                     {tech.name}
                   </p>
                 </div>

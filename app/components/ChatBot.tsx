@@ -104,10 +104,10 @@ const ChatBot: React.FC = () => {
   return (
     <div className="hidden md:flex md:py-24 flex-col md:flex-row items-start justify-between gap-12">
       <div className="w-full md:w-1/2">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-[#212529] dark:text-white">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-[#212529] ">
           Know more about me
         </h2>
-        <h3 className="text-sm md:text-lg mb-6 text-[#212529] dark:text-white">
+        <h3 className="text-sm md:text-lg mb-6 text-[#212529] ">
           {
             "The chat below uses a BERT model to answer questions about me. It's not OpenAI, so don’t expect conversations :)"
           }
@@ -142,7 +142,7 @@ const ChatBot: React.FC = () => {
         </form>
 
         {result && !loading && (
-          <div className="mt-6 text-gray-800 font-[Indie_Flower] dark:bg-gray-800 rounded-lg p-4 text-lg">
+          <div className="mt-6 text-gray-800 font-[Indie_Flower]  rounded-lg p-4 text-lg">
             {result}
           </div>
         )}
@@ -151,7 +151,7 @@ const ChatBot: React.FC = () => {
       </div>
 
       <div className="w-full md:w-1/3 pl-8">
-        <h4 className="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-300">
+        <h4 className="text-lg font-semibold mb-4 text-gray-700">
           Try asking these:
         </h4>
         <div className="flex flex-col gap-3">

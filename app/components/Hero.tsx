@@ -3,7 +3,12 @@ import { FaWhatsapp } from "react-icons/fa";
 
 export default async function Hero() {
   const data = await fetch(
-    "https://gist.githubusercontent.com/Nike-rgb/0271de49bff5b8a40a80feab244c673d/raw/learning.json"
+    "https://gist.githubusercontent.com/Nike-rgb/0271de49bff5b8a40a80feab244c673d/raw/learning.json",
+    {
+      next: {
+        revalidate: 60,
+      },
+    }
   ).then((res) => res.json());
   return (
     <>

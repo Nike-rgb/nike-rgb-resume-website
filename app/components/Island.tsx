@@ -23,7 +23,7 @@ export default function Island() {
   }, []);
 
   return (
-    <div className="h-[40vh] md:h-[50vh] w-[80%] mx-auto bg-[#f0f0f] mt-4">
+    <div className="island h-[40vh] md:h-[50vh] w-[80%] mx-auto bg-[#f0f0f] mt-4">
       <Canvas camera={{ position: [0, 5, 9], fov: isMobile ? 75 : 45 }}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} />

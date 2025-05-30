@@ -15,7 +15,7 @@ export default function ShowCase() {
     if (!creative.current) return;
 
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
+      const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: creative.current,
           start: "top 40%",
@@ -25,15 +25,52 @@ export default function ShowCase() {
         },
       });
 
-      tl.from(".title", { y: 50, opacity: 0, duration: 1 })
-        .from(".cloud", { x: -120, opacity: 0, duration: 1 }, "<")
-        .from(".text", { y: 50, opacity: 0, duration: 1 }, "<")
-        .from(".island", { y: 100, x: 200, opacity: 0, duration: 1 }, "<");
-
-      ScrollTrigger.refresh(true);
+      timeline
+        .from(".title", {
+          y: 50,
+          opacity: 0,
+          duration: 1,
+        })
+        .from(
+          ".cloud",
+          {
+            x: -120,
+            opacity: 0,
+            duration: 1,
+          },
+          "<"
+        )
+        .from(
+          ".text",
+          {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+          },
+          "<"
+        )
+        .from(
+          ".island",
+          {
+            y: 100,
+            x: 200,
+            opacity: 0,
+            duration: 1,
+          },
+          "<"
+        );
     }, creative);
 
-    return () => ctx.revert();
+    const handleLoad = () => {
+      ScrollTrigger.refresh(true);
+    };
+
+    window.addEventListener("load", handleLoad);
+
+    return () => {
+      ctx.revert();
+      window.removeEventListener("load", handleLoad);
+    };
   }, []);
 
   return (

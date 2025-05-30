@@ -16,7 +16,7 @@ export default function ShowCase() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: creative.current,
-        start: "top 80%",
+        start: "top 40%",
         end: "bottom center",
         scrub: 1,
         markers: false,

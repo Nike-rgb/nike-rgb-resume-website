@@ -13,50 +13,27 @@ export default function ShowCase() {
 
   useEffect(() => {
     if (!creative.current) return;
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: creative.current,
-        start: "top 40%",
-        end: "bottom center",
-        scrub: 1,
-        markers: false,
-        toggleActions: "play none none reverse",
-      },
-    });
 
-    tl.from(creative.current.querySelector(".title"), {
-      y: 50,
-      opacity: 0,
-      duration: 1,
-    })
-      .from(
-        creative.current.querySelector(".cloud"),
-        {
-          x: -120,
-          opacity: 0,
-          duration: 1,
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: creative.current,
+          start: "top 40%",
+          end: "bottom center",
+          scrub: 1,
+          toggleActions: "play none none reverse",
         },
-        "<"
-      )
-      .from(
-        creative.current.querySelector(".text"),
-        {
-          y: 50,
-          opacity: 0,
-          duration: 1,
-        },
-        "<"
-      )
-      .from(
-        creative.current.querySelector(".island"),
-        {
-          y: 100,
-          x: 200,
-          opacity: 0,
-          duration: 1,
-        },
-        "<"
-      );
+      });
+
+      tl.from(".title", { y: 50, opacity: 0, duration: 1 })
+        .from(".cloud", { x: -120, opacity: 0, duration: 1 }, "<")
+        .from(".text", { y: 50, opacity: 0, duration: 1 }, "<")
+        .from(".island", { y: 100, x: 200, opacity: 0, duration: 1 }, "<");
+
+      ScrollTrigger.refresh();
+    }, creative);
+
+    return () => ctx.revert();
   }, []);
 
   return (

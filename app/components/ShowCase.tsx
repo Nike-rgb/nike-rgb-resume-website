@@ -30,7 +30,7 @@ export default function ShowCase() {
         .from(".text", { y: 50, opacity: 0, duration: 1 }, "<")
         .from(".island", { y: 100, x: 200, opacity: 0, duration: 1 }, "<");
 
-      ScrollTrigger.refresh();
+      ScrollTrigger.refresh(true);
     }, creative);
 
     return () => ctx.revert();

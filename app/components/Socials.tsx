@@ -1,53 +1,54 @@
-import Image from "next/image";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
-import { HiDocumentText } from "react-icons/hi";
 import { SiMedium } from "react-icons/si";
+import MediumStories from "./MediumStories";
+import Button from "./Button";
 
 export default function Socials() {
   return (
-    <>
-      <div className="my-10 md:my-24 md:px-24">
-        <h2 className="md:text-center text-2xl md:text-4xl font-semibold text-[#212529] mb-8 md:mb-16">
-          I code daily!
-        </h2>
-        <div className="flex justify-between md:flex-row gap-4 md:gap-24 mx-auto my-4 md:my-12">
-          <p className="left hidden md:inline-block font-[Indie_Flower] max-w-1/5 text-xl font-medium -rotate-3 tracking-wide">
+    <section className="mt-20 md:mt-36">
+      <h2 className="text-slate-800 md:text-center text-4xl md:text-5xl font-semibold mb-8 md:mb-16">
+        I code daily!
+      </h2>
+
+      <div className="flex flex-col md:flex-row max-w-5xl mx-auto gap-12">
+        <div className="flex flex-col md:w-1/2 gap-24">
+          <p className="hidden md:block font-[Indie_Flower] mt-8 text-xl max-w-xs font-medium -rotate-3 tracking-wide">
             I love solving problems through code. Problem-solving and critical
             thinking is my forte.
           </p>
-          <div className="flex gap-12 md:gap-24 mt-2 md:mt-12 justify-between md:justify-center">
+          <div className="flex gap-8 mt-4 md:mt-0">
             <Link
-              className="link transition-transform duration-300"
-              href="https://github.com/Nike-rgb">
-              <FaGithub className="hidden md:inline" size={60} />
-              <FaGithub className="md:hidden" size={40} />
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://github.com/Nike-rgb"
+            >
+              <Button
+                startIcon={<FaGithub size={22} />}
+                text="Github"
+                extraClass="px-6"
+              />
             </Link>
+
             <Link
-              className="link transition-transform duration-300"
-              href="https://medium.com/@nikeshlepcha7">
-              <SiMedium className="hidden md:inline" size={60} />
-              <SiMedium className="md:hidden" size={40} />
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://medium.com/@nikeshlepcha7"
+            >
+              <Button
+                variant="outlined"
+                startIcon={<SiMedium size={22} />}
+                text="Medium"
+                extraClass="px-6"
+              />
             </Link>
-            <Link
-              href="https://resume-nikesh.tiiny.site"
-              className="link transition-transform duration-300">
-              <HiDocumentText className="hidden md:inline" size={60} />
-              <HiDocumentText className="md:hidden" size={40} />
-            </Link>
-          </div>
-          <div className="right font-[Indie_Flower] max-w-1/3 text-md md:text-2xl font-medium">
-            Check out some of my works
-            <Image
-              src="/arrow1.svg"
-              alt="arrow"
-              width={500}
-              height={500}
-              className="w-16 md:w-48 relative md:-left-16 -rotate-16 md:top-8"
-            />
           </div>
         </div>
+
+        <div className="md:w-1/2">
+          <MediumStories />
+        </div>
       </div>
-    </>
+    </section>
   );
 }

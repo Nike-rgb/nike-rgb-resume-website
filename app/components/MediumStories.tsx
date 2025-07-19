@@ -54,7 +54,6 @@ export default async function MediumStories() {
       {posts.length === 0 && <p className="text-gray-500">No posts found.</p>}
       <ul className="space-y-6">
         {" "}
-        {/* Spacing between each story block */}
         {posts.map((post, idx) => {
           const pubDate = new Date(post.pubDate);
           const isProminentStory = idx === 0;
@@ -70,8 +69,8 @@ export default async function MediumStories() {
                 rel="noopener noreferrer"
                 className={`block text-gray-900 leading-tight ${
                   isProminentStory
-                    ? "text-3xl font-extrabold md:text-4xl" // Larger, bolder for the first title
-                    : "text-xl font-semibold" // Standard title size/weight for others
+                    ? "text-3xl font-extrabold md:text-4xl"
+                    : "text-xl font-semibold"
                 } hover:underline`}
               >
                 {post.title}
@@ -80,7 +79,6 @@ export default async function MediumStories() {
               <p
                 className={`mt-2 ${isProminentStory ? "text-sm text-gray-600" : "text-sm text-gray-500"}`}
               >
-                {/* Format date to 'Mon Day, Year' (e.g., Nov 4, 2023) */}
                 {pubDate.toLocaleDateString("en-US", {
                   month: "short",
                   day: "numeric",

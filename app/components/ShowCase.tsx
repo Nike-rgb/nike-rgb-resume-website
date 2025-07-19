@@ -1,17 +1,18 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import Island from "./Island";
 import Link from "next/link";
+import Button from "./Button";
+import { FiExternalLink } from "react-icons/fi";
 
 export default function ShowCase() {
   return (
-    <div className="mb-10 md:my-40">
-      <h2 className="text-2xl md:text-3xl font-semibold text-[#212529] mb-2 md:mb-16">
+    <div className="mt-20 md:mt-36">
+      <h2 className="text-4xl md:text-5xl font-semibold text-slate-800 mb-2 md:mb-12">
         I build solutions such as
       </h2>
 
-      <div className="mx-auto md:mt-32 my-8 md:my-24 flex flex-col md:flex-row md:gap-20 items-center gap-12 px-2 md:max-w-6xl">
+      <div className="mx-auto md:mt-32 my-20 md:my-24 flex flex-col md:flex-row md:gap-20 items-center gap-12 px-2 md:max-w-5xl">
         <div className="w-full md:flex-4/5">
           <Image
             src="/scanonline.png"
@@ -22,28 +23,26 @@ export default function ShowCase() {
           />
         </div>
         <div className="flex flex-1/5 flex-col items-start text-center md:text-left max-w-xl">
-          <h3 className="text-lg md:text-3xl font-semibold mb-4">
+          <h3 className="text-2xl text-slate-700 md:text-4xl font-semibold mb-4">
             ScanItOnline
           </h3>
-          <p className="text-base p-2 text-left text-gray-600 mb-6">
-            A web-based document scanning app with multipoint cropping feature
-            to turn your physical paperwork into scanned documents right from
-            your browser.
+          <p className="p-2 text-left leading-relaxed text-gray-600 mb-6 font-medium">
+            A document scanning web-app with multipoint cropping feature
           </p>
-          <Link
-            href="https://scanitonline.vercel.app"
-            target="_blank"
-            className="inline-block py-2 px-3 md:px-6 bg-[#AC50C3] text-white rounded-lg shadow hover:bg-[#9042a4] transition"
-          >
-            Visit App
+          <Link href="https://scanitonline.vercel.app" target="_blank">
+            <Button
+              text="Try Now"
+              extraClass="px-8"
+              startIcon={<FiExternalLink />}
+            />
           </Link>
         </div>
       </div>
 
-      <h2 className="text-2xl md:text-3xl font-semibold text-[#212529] mt-12 mb-6">
+      <h3 className="text-4xl md:text-4xl font-semibold text-slate-800 mt-12 mb-6">
         Or something creative
-      </h2>
-      <div className="mt-8 md:mt-16">
+      </h3>
+      <div className="mt-20 md:mt-36">
         <div className="md:max-w-[70vw] mx-auto">
           <div className="flex justify-between">
             <div className="flex text-right">
@@ -57,7 +56,7 @@ export default function ShowCase() {
             </div>
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center md:gap-16">
-            <p className="text font-[Indie_Flower] text-lg md:text-2xl font-medium -rotate-6 relative md:-top-16">
+            <p className="text font-[Indie_Flower] text-lg md:text-2xl text-slate-600 font-medium -rotate-6 relative md:-top-16">
               This is not a picture. Try spinning the island
             </p>
             <Island />

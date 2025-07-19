@@ -102,17 +102,13 @@ const ChatBot: React.FC = () => {
   };
 
   return (
-    <div className="hidden md:flex md:py-24 flex-col md:flex-row items-start justify-between gap-12">
+    <div className="hidden md:flex mt-20 md:mt-36 flex-col md:flex-row items-start justify-between gap-12 mx-auto max-w-7xl">
       <div className="w-full md:w-1/2">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-[#212529] ">
+        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-slate-800 ">
           Know more about me
         </h2>
-        <h3 className="text-sm md:text-lg mb-6 text-[#212529] ">
-          {
-            "The chat below uses a BERT model to answer questions about me. It's not OpenAI, so don’t expect conversations :)"
-          }
-        </h3>
-        <h4 className=" text-sm text-gray-500">
+
+        <h4 className=" text-base text-gray-600">
           {
             "It's a QnA model, so no yes-no questions. Use the examples on the right. Also the answers are on limited topics."
           }
@@ -120,7 +116,8 @@ const ChatBot: React.FC = () => {
 
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col mt-6 md:mt-12 sm:flex-row items-center gap-6 md:w-3/4">
+          className="flex flex-col mt-6 md:mt-12 sm:flex-row items-center gap-6 md:w-3/4"
+        >
           <input
             type="text"
             disabled={loading}
@@ -136,7 +133,8 @@ const ChatBot: React.FC = () => {
             disabled={loading}
             className={`${
               loading ? "hidden" : ""
-            } px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold hover:from-blue-700 hover:to-indigo-700 active:scale-95 transition-all shadow-md`}>
+            } px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold hover:from-blue-700 hover:to-indigo-700 active:scale-95 transition-all shadow-md`}
+          >
             Send
           </button>
         </form>
@@ -159,7 +157,8 @@ const ChatBot: React.FC = () => {
             <button
               key={i}
               onClick={() => handleExampleClick(q)}
-              className="text-left text-sm md:text-base px-4 py-2 rounded-md border border-gray-100 hover:bg-indigo-50 hover:border-indigo-300 transition-all">
+              className="text-left text-sm md:text-base px-4 py-2 rounded-md border border-gray-100 hover:bg-indigo-50 hover:border-indigo-300 transition-all"
+            >
               {q}
             </button>
           ))}

@@ -1,5 +1,3 @@
-"use client";
-
 import { FaReact, FaNodeJs, FaJava } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -61,22 +59,23 @@ const categorizedTechStack = {
 
 export default function TechStack() {
   return (
-    <div className="mt-20 mx-auto md:max-w-[80vw] px-4 md:px-24">
-      <h2 className="text-2xl md:text-4xl font-semibold text-[#212529] text-center mb-12">
+    <div className="mt-20 md:mt-36 mx-auto md:max-w-[80vw] px-4 md:px-24">
+      <h2 className="text-4xl md:text-5xl font-semibold text-slate-800 text-center mb-16">
         My Tech Stack
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
         {Object.entries(categorizedTechStack).map(([category, techs]) => (
           <div key={category}>
-            <h3 className="text-lg md:text-xl mb-4 text-gray-600 font-semibold md:text-center">
+            <h3 className="text-2xl mb-8 text-slate-600 font-semibold md:text-center">
               {category}
             </h3>
             <div className="grid grid-cols-3 md:grid-cols-2 gap-4 place-items-center mx-auto">
               {techs.map((tech) => (
                 <div
                   key={tech.name}
-                  className="w-20 h-20 md:size-24 bg-white shadow rounded-lg flex flex-col items-center justify-center text-center">
+                  className="w-20 h-20 md:size-24 bg-white shadow rounded-lg flex flex-col items-center justify-center text-center"
+                >
                   {tech.icon}
                   <p className="mt-1 text-xs font-medium text-gray-700">
                     {tech.name}
@@ -87,18 +86,6 @@ export default function TechStack() {
           </div>
         ))}
       </div>
-
-      <style jsx>{`
-        .icon {
-          font-size: 1.25rem;
-        }
-
-        @media (min-width: 768px) {
-          .icon {
-            font-size: 1.75rem;
-          }
-        }
-      `}</style>
     </div>
   );
 }

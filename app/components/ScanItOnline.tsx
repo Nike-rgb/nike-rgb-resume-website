@@ -33,7 +33,7 @@ export default function ThreeCarousel({ images }: Props) {
     scene.add(camera);
 
     const carousel = carouselRef.current;
-    carousel.position.z = -300; // optional, controls how far carousel is from camera
+    carousel.position.z = -300;
     scene.add(carousel);
 
     const radius = 750;
@@ -81,7 +81,6 @@ export default function ThreeCarousel({ images }: Props) {
 
     renderScene();
 
-    // Optional: resize handler
     const handleResize = () => {
       if (!container) return;
       const w = container.clientWidth;

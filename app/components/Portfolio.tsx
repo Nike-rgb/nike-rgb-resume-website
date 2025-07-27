@@ -18,7 +18,7 @@ const projects = [
 export default function Portfolio() {
   return (
     <div className="mt-20 md:mt-36 md:px-24 px-4">
-      <h2 className="text-4xl md:text-5xl font-semibold text-slate-800 mb-16">
+      <h2 className="text-3xl md:text-5xl font-semibold text-slate-800 mb-16">
         Portfolio Highlights
       </h2>
 

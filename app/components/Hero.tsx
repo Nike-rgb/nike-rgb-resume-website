@@ -17,7 +17,7 @@ export default async function Hero() {
           <h1 className="text-5xl md:text-6xl font-bold text-slate-800">
             Nikesh Kazi
           </h1>
-          <h2 className="text-3xl  text-slate-600">Software Engineer</h2>
+          <h2 className="text-2xl  text-slate-600">Software Engineer</h2>
           <p className="italic text-gray-700 text-lg">
             {"I build pixel-perfect web applications."}
           </p>

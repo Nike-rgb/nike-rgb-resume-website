@@ -8,7 +8,7 @@ import { FiExternalLink } from "react-icons/fi";
 export default function ShowCase() {
   return (
     <div className="mt-20 md:mt-36">
-      <h2 className="text-4xl md:text-5xl font-semibold text-slate-800 mb-2 md:mb-12">
+      <h2 className="text-3xl md:text-5xl font-semibold text-slate-800 mb-2 md:mb-12">
         I build solutions such as
       </h2>
 
@@ -39,7 +39,7 @@ export default function ShowCase() {
         </div>
       </div>
 
-      <h3 className="text-4xl md:text-4xl font-semibold text-slate-800 mt-12 mb-6">
+      <h3 className="text-3xl md:text-4xl font-semibold text-slate-800 mt-12 mb-6">
         Or something creative
       </h3>
       <div className="mt-20 md:mt-36">

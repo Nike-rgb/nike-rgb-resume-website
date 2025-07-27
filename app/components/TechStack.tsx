@@ -60,7 +60,7 @@ const categorizedTechStack = {
 export default function TechStack() {
   return (
     <div className="mt-20 md:mt-36 mx-auto md:max-w-[80vw] px-4 md:px-24">
-      <h2 className="text-4xl md:text-5xl font-semibold text-slate-800 text-center mb-16">
+      <h2 className="text-3xl md:text-5xl font-semibold text-slate-800 text-center mb-16">
         My Tech Stack
       </h2>
 

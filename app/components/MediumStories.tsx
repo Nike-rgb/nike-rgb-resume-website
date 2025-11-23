@@ -14,30 +14,25 @@ interface MediumItem {
 
 async function fetchMediumPosts(): Promise<Post[]> {
   try {
-    const res = await fetch("https://medium.com/feed/@nikeshkazi", {
-      headers: {
-        "User-Agent": "Mozilla/5.0",
-        Accept: "application/rss+xml",
-      },
-      cache: "no-store",
-    });
+    const res = await fetch(
+      `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(
+        "https://medium.com/feed/@nikeshkazi"
+      )}`
+    );
 
     if (!res.ok) {
-      throw new Error(`Fetch failed with status: ${res.status}`);
+      return [];
     }
 
-    const xml = await res.text();
-    const json = await parseStringPromise(xml);
-    console.log(json);
-    const items = json.rss.channel[0].item.slice(0, 3) as MediumItem[];
+    const data = await res.json();
 
-    return items.map((item) => ({
-      title: item.title[0],
-      link: item.link[0],
-      pubDate: item.pubDate[0],
+    return data.items.slice(0, 3).map((item: any) => ({
+      title: item.title,
+      link: item.link,
+      pubDate: item.pubDate,
     }));
   } catch (error) {
-    console.log("Error fetching Medium feed:", error);
+    console.error("Error:", error);
     return [];
   }
 }
@@ -48,10 +43,10 @@ export default async function MediumStories() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-6">
       {" "}
-      <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+      <h2 className="text-lg font-semibold text-slate-500 mb-6">
         Latest from Medium
       </h2>
-      {posts.length === 0 && <p className="text-gray-500">No posts found.</p>}
+      {posts.length === 0 && <p className="text-gray-400">No posts found.</p>}
       <ul className="space-y-6">
         {" "}
         {posts.map((post, idx) => {
@@ -69,7 +64,7 @@ export default async function MediumStories() {
                 rel="noopener noreferrer"
                 className={`block text-gray-900 leading-tight ${
                   isProminentStory
-                    ? "text-3xl font-extrabold md:text-4xl"
+                    ? "text-2xl font-extrabold md:text-4xl"
                     : "text-xl font-semibold"
                 } hover:underline`}
               >
@@ -77,7 +72,11 @@ export default async function MediumStories() {
               </a>
 
               <p
-                className={`mt-2 ${isProminentStory ? "text-sm text-gray-600" : "text-sm text-gray-500"}`}
+                className={`mt-2 ${
+                  isProminentStory
+                    ? "text-sm text-gray-600"
+                    : "text-sm text-gray-500"
+                }`}
               >
                 {pubDate.toLocaleDateString("en-US", {
                   month: "short",

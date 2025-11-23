@@ -1,5 +1,3 @@
-import { parseStringPromise } from "xml2js";
-
 interface Post {
   title: string;
   link: string;
@@ -26,7 +24,7 @@ async function fetchMediumPosts(): Promise<Post[]> {
 
     const data = await res.json();
 
-    return data.items.slice(0, 3).map((item: any) => ({
+    return data.items.slice(0, 3).map((item: MediumItem) => ({
       title: item.title,
       link: item.link,
       pubDate: item.pubDate,

@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import { FaReact, FaNodeJs, FaJava, FaAws } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaAws } from "react-icons/fa";
 import {
   SiNextdotjs,
   SiTypescript,
